@@ -1,5 +1,5 @@
-const  ColorButton = (props) => {
-  return <button>{props.colorName}</button>;
+const  ColorButton = ({colorName, setSelectedColor}) => {
+  return <button onClick={() => setSelectedColor(colorName)}>{colorName}</button>;
 
 };
 
