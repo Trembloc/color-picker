@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import './App.css'
 import ColorButton from '../ColorButton.jsx';
+import PickedColor from '../PickedColor.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedColor, setSelectedColor] = useState("")
 
   return (
     <>
-     <h1>color picker</h1>
-     <ColorButton colorName="red"/>
-     <ColorButton colorName="blue"/>
-     <ColorButton colorName="yellow"/>
+      <PickedColor selectedColor={selectedColor}/>
+
+      <h1>color picker</h1>
+      <ColorButton colorName="red" setSelectedColor={setSelectedColor} />
+      <ColorButton colorName="blue" setSelectedColor={setSelectedColor} />
+      <ColorButton colorName="yellow" setSelectedColor={setSelectedColor} />
+
     </>
   )
 }
